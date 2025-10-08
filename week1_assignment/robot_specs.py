@@ -1,0 +1,22 @@
+# Valijonov Humoyun, FAI-01
+
+model = input('Robot model name:')
+number = int(input("Serial number of the robot ?"))
+Creator = input('Enter your name:')
+Function = input("Robot's Primary function : ")
+Power_source =  str(input('What is the power source of your robot?'))
+
+print ("="*40)
+print ("     ROBOTICS DIVISION - SPEC SHEET")
+print ("="*40)
+print(f"Robot Model Name : {model}")
+print(f"Serial Number    : {number}")
+print(f"Creator's Name   : {Creator}")
+print("\n")
+print(f"Full Designation: {Creator}'s {model}")
+print("-"*40)
+print(f"Primary Function : {Function}")
+print(f"Power Source     : {Power_source}")
+print("-"*40)
+print ("         STATUS: OPERATIONAL")
+print ("="*40)

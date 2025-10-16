@@ -1,0 +1,50 @@
+name = input("Enter customer name: ")
+has_student_id = input("Do you have a student ID? (yes/no): ")
+order_time = int(input("Enter order time (24-hour format, e.g., 14 for 2 PM): "))
+has_student_id = has_student_id == "yes"
+d = input("Enter name of dish 1: ")
+d1p = int(input("Enter price of dish 1: "))
+q1 = int(input("Enter quantity of dish 1: "))
+d2 = input("Enter name of dish 2: ")
+d2p = int(input("Enter price of dish 2: "))
+q2 = int(input("Enter quantity of dish 2: "))
+d3 = input("Enter name of dish 3: ")
+d3p = int(input("Enter price of dish 3: "))
+q3 = int(input("Enter quantity of dish 3: "))
+subtotal = (d1p * q1) + (d2p * q2) + (d3p * q3)
+is_student = has_student_id
+happy_hour = (order_time >= 14) and (order_time <= 17)
+large_order = subtotal >= 150000
+student_discount = int(is_student * subtotal * 0.15)
+happy_hour = int(happy_hour * subtotal * 0.20)
+use_student = student_discount >= happy_hour
+main_discount = (use_student * student_discount) + ((not use_student) * happy_hour)
+discount_type = ("Student Discount" * use_student) + ("Happy Hour Discount" * (not use_student))
+large_order_discount = int(large_order * subtotal * 0.05)
+total_discount = main_discount + large_order_discount
+subtotal_after_discount = subtotal - total_discount
+service_charge = int(subtotal_after_discount * 0.10)
+delivery_fee = int((subtotal < 100000) * 15000)
+free_delivery = subtotal >= 100000
+final_total = subtotal_after_discount + service_charge + delivery_fee
+total_saved = total_discount
+print("\n=========== ORDER SUMMARY ===========")
+print("Customer Name:", name)
+print("Student ID:", "Yes" * has_student_id + "No" * (not has_student_id))
+print("Order Time:", order_time, ":00")
+print("\n--- Ordered Items ---")
+print(f"{d} - {d1p} x {q1} = {d1p * q1}")
+print(f"{d2} - {d2p} x {q2} = {d2p * q2}")
+print(f"{d3} - {d3p} x {q3} = {d3p * q3}")
+print("\nSubtotal before discounts:", subtotal)
+print("\n--- Discounts ---")
+print("Student Discount Eligible:", is_student, "Amount:", student_discount)
+print("Happy Hour Discount Eligible:", happy_hour, "Amount:", happy_hour)
+print("Main Discount Applied:", discount_type, "-", main_discount)
+print("Large Order Discount Eligible:", large_order, "Amount:", large_order_discount)
+print("Total Discounts:", total_discount)
+print("\nSubtotal after discounts:", subtotal_after_discount)
+print("Service Charge (10%):", service_charge)
+print("Delivery Fee:", delivery_fee, " (Free Delivery:", free_delivery, ")")
+print("\nFinal Total:", final_total)
+print("Total Amount Saved:", total_saved)

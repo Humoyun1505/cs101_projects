@@ -1,0 +1,13 @@
+dish1 = input("What you want for the first dish?")
+quantity = int(input("How many you want to order?: "))
+price_each = float(input("Enter price of the food please :  "))
+total = quantity * price_each
+dish2 = input("What you want for the second dish?")
+quantity2 = int(input("How many you want to order?:"))
+price_each2 = float(input("Enter price of the food please : "))
+total2 = quantity2 * price_each2
+dish3 = input("What you want for the second dish?")
+quantity3 = int(input("How many you want to order?: "))
+price_each3 = float(input("Enter price of the food please : "))
+total3 = quantity3 * price_each3
+name = input('Your name Please :')
